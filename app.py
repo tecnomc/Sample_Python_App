@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello from webhook3 Pipeline!"
+    return "Hello from Devops Pipeline!"
 
 @app.route("/health")
 def health():
