@@ -6,7 +6,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: 'main', url: 'https://github.com/tecnomc/Sample_Python_App.git'
-                #withCredentials username: tecnomc password: $(gittoken)
+                
             }
         }
 
