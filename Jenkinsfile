@@ -14,12 +14,10 @@ pipeline {
                 sh 'docker build -t python-flask-app .'
             }
         }
-
-        stage('Run Docker Container') {
+        stage('Deploy to App Server') {
             steps {
-                sh 'docker run -d -p 5000:5000 python-flask-app'
-            }
-        }
-
+               sh 'ssh ec2-user@100.54.90.244 docker run -d -p 5000:5000 python-flask-app'
+             }
+          }       
     }
 }
