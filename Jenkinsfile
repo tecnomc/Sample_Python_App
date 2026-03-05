@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deploy to App Server') {
             steps {
-               sh 'ssh -o StrictHostKeyChecking=no ec2-user@100.54.90.244 docker run -d -p 5000:5000 python-flask-app'
+               sh '''ssh -i /var/lib/jenkins/.ssh/aws.pem -o StrictHostKeyChecking=no ec2-user@100.54.90.244 docker run -d -p 5000:5000 python-flask-app'''
              }
           }       
     }
