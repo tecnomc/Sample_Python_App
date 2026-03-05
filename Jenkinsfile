@@ -27,6 +27,7 @@ pipeline {
                    echo $DOCKER_PWD | docker login -u $DOCKER_USER --password-stdin
                    docker push shilpa1819/python-flask-app:${BUILD_NUMBER}
                    '''
+              }           
            }
         }
         stage('Deploy to App Server') {
@@ -45,5 +46,7 @@ pipeline {
             steps {
                sh 'docker system prune -f' 
 
-    }
+           }
+        }
+}
 }
